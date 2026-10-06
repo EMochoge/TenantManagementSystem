@@ -1,22 +1,13 @@
 # Tenant Management System
 
-Android Kotlin project for the Tenant Management practical on View Binding and Data Binding.
+Android Kotlin project for the View Binding, Data Binding, and Intents practicals.
 
-Open this folder in Android Studio, sync Gradle, and run the app on Android 7.0 or newer. Use JDK 17 or newer and install Android SDK 36. Android Studio creates local.properties for your SDK location.
+Open this folder in Android Studio, sync Gradle, and run on an Android emulator or phone. Use JDK 17 or newer and Android SDK 36. Build with `gradlew.bat assembleDebug` on Windows or `./gradlew assembleDebug` on macOS/Linux.
 
-Build on Windows with `gradlew.bat assembleDebug`, or on macOS/Linux with `./gradlew assembleDebug`.
+Login opens first. Any nonempty email and password work for this practical; registration demonstrates navigation and email passing, without storing accounts. Register returns to Login with the email filled in. Login passes EMAIL to MainActivity, which displays "Logged in as ..." in a Toast.
 
-The screen uses ConstraintLayout and ActivityMainBinding. SAVE creates a Tenant and assigns it to the layout. The result uses `@{tenant.summary()}` and the large bold name uses `@{tenant.name}`.
+The Add Tenant screen uses View Binding for inputs and Data Binding for the saved Tenant. All three empty fields show "Required" before saving. SAVE clears the inputs and displays the tenant, with "Rent paid" in the summary and the name in bold. The saved tenant survives rotation.
 
-All four extra exercises are included: an empty name shows an error, the summary says “Rent paid”, the saved name appears in bold, and the three input fields clear after saving. The saved result survives screen rotation.
+CALL TENANT opens the dialer. SHARE opens the Android chooser with ACTION_SEND, text/plain, and tenant.summary() as EXTRA_TEXT. Both require a saved tenant. The help link opens the Strathmore website.
 
-Try John Kamau, 0712345678, and 25000. SAVE should show:
-
-```text
-John Kamau
-Tenant: John Kamau
-Phone: 0712345678
-Rent paid: KSh 25000
-```
-
-Save Mary Wanjiku next to replace the result. Tap SAVE with an empty name to check validation.
+Try registering, logging in, saving John Kamau / 0712345678 / 25000, and tapping SHARE. Try each empty input to check validation.

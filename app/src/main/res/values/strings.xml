@@ -1,12 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Tenant Management System</string>
-    <string name="title">TENANT MANAGEMENT SYSTEM</string>
-    <string name="tenant_name">Tenant Name</string>
-    <string name="name_hint">Enter tenant name</string>
-    <string name="phone_number">Phone Number</string>
-    <string name="phone_hint">Enter phone number</string>
-    <string name="rent_hint">Enter Rent Paid</string>
-    <string name="save">SAVE</string>
-    <string name="result_hint">Saved tenant will appear here</string>
-    <string name="name_required">Tenant name is required</string>
+    <string
+        name="app_name">Tenant Management System</string>
+    <string
+        name="title">TENANT MANAGEMENT SYSTEM</string>
+    <string
+        name="tenant_name">Tenant Name</string>
+    <string
+        name="name_hint">Enter tenant name</string>
+    <string
+        name="phone_number">Phone Number</string>
+    <string
+        name="phone_hint">Enter phone number</string>
+    <string
+        name="rent_hint">Enter Rent Paid</string>
+    <string
+        name="save">SAVE</string>
+    <string
+        name="result_hint">Saved tenant will appear here</string>
+    <string
+        name="call_tenant">CALL TENANT</string>
+    <string
+        name="share">SHARE</string>
+    <string
+        name="create_account">Create an account</string>
+    <string
+        name="login_subtitle">Log in to continue</string>
+    <string
+        name="full_name">Full name</string>
+    <string
+        name="email">Email</string>
+    <string
+        name="password">Password</string>
+    <string
+        name="register">REGISTER</string>
+    <string
+        name="login">LOGIN</string>
+    <string
+        name="login_link">Already have an account? Log in</string>
+    <string
+        name="register_link">Don\'t have an account? Register</string>
+    <string
+        name="help_link">Need help? Visit our website</string>
 </resources>

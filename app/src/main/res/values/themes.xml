@@ -1,5 +1,7 @@
 <resources>
     <style name="Theme.TenantManagement" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="fontFamily">sans-serif-light</item>
         <item name="colorPrimary">#245C43</item>
         <item name="colorPrimaryDark">#183D2D</item>
         <item name="colorAccent">#245C43</item>
