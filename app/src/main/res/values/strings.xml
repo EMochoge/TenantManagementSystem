@@ -42,4 +42,10 @@
         name="register_link">Don\'t have an account? Register</string>
     <string
         name="help_link">Need help? Visit our website</string>
+    <string
+        name="about_details">Add tenants, view their details, and track total rent.
+
+Mobile Application Development practical.
+
+Tenant records are kept in memory for this lab.</string>
 </resources>

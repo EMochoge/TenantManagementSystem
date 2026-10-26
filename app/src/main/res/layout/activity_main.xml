@@ -1,171 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
+
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <data>
-        <variable
-            name="tenant"
-            type="com.example.tenantmanagementsystem.Tenant" />
-    </data>
-    <ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
-        <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="24dp">
-            <TextView
-                android:id="@+id/titleTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:text="@string/title"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-condensed"
-                android:letterSpacing="0.025"
-                android:textColor="#253D31"
-                android:gravity="center"
-                android:layout_marginTop="24dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-            <TextView
-                android:fontFamily="sans-serif-medium"
-                android:id="@+id/tenantNameLabel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:text="@string/tenant_name"
-                android:textSize="16sp"
-                android:layout_marginTop="24dp"
-                app:layout_constraintTop_toBottomOf="@id/titleTextView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-            <EditText
-                android:id="@+id/tenantNameEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:hint="@string/name_hint"
-                android:minHeight="48dp"
-                android:padding="12dp"
-                android:layout_marginTop="8dp"
-                android:inputType="textPersonName"
-                android:autofillHints="name"
-                app:layout_constraintTop_toBottomOf="@id/tenantNameLabel"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-            <TextView
-                android:fontFamily="sans-serif-medium"
-                android:id="@+id/phoneLabel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:text="@string/phone_number"
-                android:textSize="16sp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/tenantNameEditText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-            <EditText
-                android:id="@+id/phoneEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:hint="@string/phone_hint"
-                android:inputType="phone"
-                android:autofillHints="phone"
-                android:minHeight="48dp"
-                android:padding="12dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/phoneLabel"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-            <EditText
-                android:id="@+id/rentEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="8dp"
-                android:hint="@string/rent_hint"
-                android:inputType="numberDecimal"
-                android:importantForAutofill="no"
-                android:minHeight="48dp"
-                android:padding="12dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/phoneEditText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/saveButton" />
-            <Button
-                android:fontFamily="sans-serif-medium"
-                android:id="@+id/saveButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:layout_marginEnd="24dp"
-                android:text="@string/save"
-                android:minHeight="48dp"
-                app:layout_constraintTop_toTopOf="@id/rentEditText"
-                app:layout_constraintBottom_toBottomOf="@id/rentEditText"
-                app:layout_constraintEnd_toEndOf="parent" />
-            <TextView
-                android:id="@+id/savedTenantNameTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:text="@{tenant.name}"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-condensed"
-                android:letterSpacing="0.025"
-                android:textColor="#253D31"
-                android:layout_marginTop="24dp"
-                app:layout_constraintTop_toBottomOf="@id/rentEditText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-            <TextView
-                android:id="@+id/tenantResultTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:text="@{tenant.summary()}"
-                android:hint="@string/result_hint"
-                android:textSize="18sp"
-                android:padding="16dp"
-                android:layout_marginTop="8dp"
-                android:accessibilityLiveRegion="polite"
-                app:layout_constraintTop_toBottomOf="@id/savedTenantNameTextView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-            <Button
-                android:fontFamily="sans-serif-medium"
-                android:id="@+id/callButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/call_tenant"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/tenantResultTextView"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="24dp" />
-            <Button
-                android:fontFamily="sans-serif-medium"
-                android:id="@+id/shareButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/share"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/tenantResultTextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="24dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-</layout>
+            android:minHeight="?attr/actionBarSize"
+            android:background="#EAF0EB" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph" />
+
+    </LinearLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
